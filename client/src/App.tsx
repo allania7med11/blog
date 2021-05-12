@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,7 +13,7 @@ const App: FC = () => {
       <div className="app">
         <div className="header">
           <nav>
-            <ul className="flex bg-black text-white">
+            <ul className="flex bg-black text-white items-center h-12">
               <li className="p-2 opacity-75 hover:opacity-100">
                 <Link to="/">Home</Link>
               </li>
@@ -24,7 +23,7 @@ const App: FC = () => {
             </ul>
           </nav>
         </div>
-        <div className="content m-2 text-2xl">
+        <div className="content m-2">
           <Switch>
             <Route path="/" exact>
               <Home />

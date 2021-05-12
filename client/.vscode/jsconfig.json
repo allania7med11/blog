@@ -1,0 +1,6 @@
+{
+  "path-autocomplete.includeExtension":true,
+  "path-autocomplete.pathMappings": {
+    "@": "${folder}/src" // alias for /test
+  }
+}

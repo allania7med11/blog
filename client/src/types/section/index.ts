@@ -1,25 +1,41 @@
 import { ThunkDispatch } from "redux-thunk";
 import type { AnyAction } from "redux";
+import { ChangeEvent } from "react";
 export type CUD = "create" | "update" | "delete";
+
 export type UpdateSection = { action: CUD; section: Section };
 export type Dispatch = ThunkDispatch<{}, {}, AnyAction>;
+
 export interface Section {
-  id: Number | null;
-  type: string | null;
-  title: string | null;
-  description: string | null;
-  body: string | null;
-  sectionId: string | null;
+  id?: Number;
+  type?: string;
+  title?: string;
+  description?: string;
+  body?: string;
+  sectionId?: string;
+}
+export interface parentSection extends Section {
+  sections: Section[];
 }
 export interface sectionState {
-  action: string;
+  action: CUD;
   show: boolean;
   current: Section;
-  list: Section[];
+  parent: parentSection;
+  displayId: Number;
 }
 
 export enum sectionActionTypes {
   SECTION_CURRENT = "SECTION_CURRENT",
-  SECTION_LIST = "SECTION_LIST",
+  SECTION_PARENT = "SECTION_PARENT",
   SECTION_CLOSE = "SECTION_CLOSE",
+  SECTION_DISPLAY = "SECTION_DISPLAY",
 }
+
+export interface UseSection {
+  current: Section;
+  action: CUD;
+  dispatch: Dispatch;
+}
+
+export type UpdateInput = ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;

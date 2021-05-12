@@ -4,16 +4,18 @@ const initial: sectionState = {
   action: "create",
   show: false,
   current: {
-    id: null,
-    type: null,
-    title: null,
-    description: null,
-    body: null,
-    sectionId: null,
+    id: 0,
+    type: "page",
+    title: "",
+    description: "",
+    body: "",
+    sectionId: "",
   },
-  list: [],
+  parent:{sections:[]},
+  displayId: -1,
 };
-const { SECTION_CURRENT, SECTION_LIST, SECTION_CLOSE } = sectionActionTypes;
+const { SECTION_CURRENT, SECTION_PARENT, SECTION_CLOSE, SECTION_DISPLAY } =
+  sectionActionTypes;
 const sectionReducer: Reducer<
   sectionState,
   { type: sectionActionTypes; payload?: any }
@@ -26,10 +28,12 @@ const sectionReducer: Reducer<
         action: payload.action,
         show: true,
       };
-    case SECTION_LIST:
-      return { ...state, list: payload.list, show: false };
+    case SECTION_PARENT:
+      return { ...state, parent: payload, show: false };
     case SECTION_CLOSE:
       return { ...state, show: false };
+    case SECTION_DISPLAY:
+      return { ...state, displayId: payload };
     default:
       return state;
   }
