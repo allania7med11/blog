@@ -1,5 +1,5 @@
 import { RootState } from "@/store";
-import { faTimes, faBars, faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons"
+import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { FC } from "react"
 import { useDispatch, useSelector } from "react-redux";
