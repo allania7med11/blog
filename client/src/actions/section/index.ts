@@ -1,4 +1,4 @@
-import api from "../../api/section";
+import api from "@/api/section";
 import {
   CUD,
   Dispatch,
@@ -6,9 +6,15 @@ import {
   Section,
   sectionActionTypes,
   UpdateSection,
-} from "./../../types/section/index";
-const { SECTION_CURRENT, SECTION_PARENT, SECTION_CLOSE, SECTION_DISPLAY } =
-  sectionActionTypes;
+} from "@/types/section";
+
+const {
+  SECTION_CURRENT,
+  SECTION_PARENT,
+  SECTION_CLOSE,
+  SECTION_DISPLAY,
+  SECTION_EXTEND,
+} = sectionActionTypes;
 export const currentCreate = (type: "section" | "page", id: string) => {
   let payload = { action: "create", section: {} };
   payload.section = {
@@ -39,6 +45,9 @@ export const displayUpdate = (payload: Number) => ({
   type: SECTION_DISPLAY,
   payload: payload,
 });
+export const extendUpdate = () => ({
+  type: SECTION_EXTEND,
+});
 
 const submitChoice = {
   create: (section: Section) => api.create(section),
@@ -47,7 +56,7 @@ const submitChoice = {
 };
 export const readSections =
   (sectionId?: Number) => async (dispatch: Dispatch) => {
-    let id = sectionId ? sectionId + "" : ""
+    let id = sectionId ? sectionId + "" : "";
     let response = await api.read(id);
     dispatch(parentUpdate(response.data));
   };
@@ -55,7 +64,7 @@ export const updateSections =
   ({ action, section }: UpdateSection) =>
   async (dispatch: Dispatch) => {
     await submitChoice[action](section);
-    let id = section.sectionId ? section.sectionId + "" : ""
+    let id = section.sectionId ? section.sectionId + "" : "";
     let response = await api.read(id);
     dispatch(parentUpdate(response.data));
   };

@@ -11,10 +11,11 @@ const initial: sectionState = {
     body: "",
     sectionId: "",
   },
-  parent:{sections:[]},
+  parent: { sections: [] },
   displayId: -1,
+  extend: true,
 };
-const { SECTION_CURRENT, SECTION_PARENT, SECTION_CLOSE, SECTION_DISPLAY } =
+const { SECTION_CURRENT, SECTION_PARENT, SECTION_CLOSE, SECTION_DISPLAY,SECTION_EXTEND } =
   sectionActionTypes;
 const sectionReducer: Reducer<
   sectionState,
@@ -34,6 +35,8 @@ const sectionReducer: Reducer<
       return { ...state, show: false };
     case SECTION_DISPLAY:
       return { ...state, displayId: payload };
+    case SECTION_EXTEND:
+      return { ...state, extend: !state.extend };
     default:
       return state;
   }

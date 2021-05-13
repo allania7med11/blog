@@ -23,6 +23,7 @@ export interface sectionState {
   current: Section;
   parent: parentSection;
   displayId: Number;
+  extend: boolean;
 }
 
 export enum sectionActionTypes {
@@ -30,6 +31,7 @@ export enum sectionActionTypes {
   SECTION_PARENT = "SECTION_PARENT",
   SECTION_CLOSE = "SECTION_CLOSE",
   SECTION_DISPLAY = "SECTION_DISPLAY",
+  SECTION_EXTEND = "SECTION_EXTEND",
 }
 
 export interface UseSection {
