@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
 import Form from "./Form";
 import Cards from "./Cards";
+import Navbar from "./Sidebar";
 
 const Sections: FC = () => {
   let { id } = useParams<{ id: string }>();
@@ -15,6 +16,7 @@ const Sections: FC = () => {
   const dispatch = useDispatch();
   return (
     <div>
+      <Navbar />
       <button
         onClick={() => dispatch(currentCreate("page", id))}
         className={`${btn.btn} bg-primary`}
