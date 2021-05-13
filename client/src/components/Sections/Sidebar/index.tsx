@@ -1,5 +1,5 @@
 import { RootState } from "@/store";
-import { faTimes, faBars, faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons"
+import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { FC } from "react"
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,7 @@ enum CSS {
 const useExtend = (extend: boolean) => {
     const dispatch = useDispatch();
     let icon = extend ? faTimes : faBars
-    let width = extend ? 'w-px220' : 'w-14'
+    let width = extend ? "w-px220" : "w-14"
     const update = () => dispatch(extendUpdate())
     return [icon, width, update] as const
 }
