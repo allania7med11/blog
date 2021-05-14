@@ -87,7 +87,7 @@ const Form: FC<{ margin: string }> = ({ margin }) => {
                         {action === "delete" ? (
                             <p className="text-center text-2xl">
                                 Are you sure you want to delete
-                                <span className="font-bold"> {section.title} </span>section?
+                                <span className="font-bold"> {section.title} </span>{section.type}?
                             </p>
                         ) : (
                             <>
