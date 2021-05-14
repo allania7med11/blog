@@ -1,6 +1,6 @@
 import { currentUpdate } from "@/store/section/actions";
 import { Dispatch, Section } from "@/store/section/types";
-import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FC, memo } from "react";
 import { useDispatch } from "react-redux";
@@ -30,7 +30,10 @@ const Card: FC<{ section: Section }> = ({ section }) => {
                     <FontAwesomeIcon className="mx-1" icon={faTrash} />
                 </button>
             </div>
-            <div className="text-lg text-gray-600  flex py-2">{section.title}</div>
+            <div className="text-lg text-gray-600  flex py-2 items-center">
+                {section.title}
+                {section.type==="page" &&  <FontAwesomeIcon className="mx-1 text-sm" icon={faEye} />}
+            </div>
             <Body section={section}  />
             <See section={section}  />
         </div>

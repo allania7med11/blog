@@ -1,6 +1,8 @@
 import { displayUpdate } from "@/store/section/actions";
 import { Section } from "@/store/section/types"
-import { FC } from "react"
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { FC } from "react"
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 type props = { section: Section, extend: boolean, index: number }
@@ -30,6 +32,7 @@ const Child: FC<props> = ({ section, extend, index }) => {
     return (
         <div onClick={see} className="py-4 hover:text-white cursor-pointer">
             {index + 1}{extend && `.${section.title}`}
+            {section.type==="page" &&  <FontAwesomeIcon className="mx-1 text-sm" icon={faEye} />}
         </div>)
 }
 export default Child
