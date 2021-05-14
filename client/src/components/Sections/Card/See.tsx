@@ -1,6 +1,6 @@
-import { displayUpdate } from "@/actions/section";
+import { displayUpdate } from "@/store/section/actions";
 import { RootState } from "@/store";
-import { Section } from "@/types/section";
+import { Section } from "@/store/section/types";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FC } from "react";

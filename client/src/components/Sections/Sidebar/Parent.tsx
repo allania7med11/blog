@@ -1,4 +1,4 @@
-import { parentSection } from "@/types/section";
+import { parentSection } from "@/store/section/types";
 import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FC } from "react";

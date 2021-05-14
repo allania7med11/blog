@@ -1,4 +1,4 @@
-import { Section } from "@/types/section"
+import { Section } from "@/store/section/types"
 import { FC } from "react"
 type props = { section: Section, extend: boolean, index: number }
 const Child: FC<props> = ({ section, extend, index }) => {

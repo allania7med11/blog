@@ -1,4 +1,4 @@
-import api from "@/api/section";
+import api from "./api";
 import {
   CUD,
   Dispatch,
@@ -6,7 +6,7 @@ import {
   Section,
   sectionActionTypes,
   UpdateSection,
-} from "@/types/section";
+} from "./types";
 
 const {
   SECTION_CURRENT,

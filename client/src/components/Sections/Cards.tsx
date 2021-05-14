@@ -1,4 +1,4 @@
-import { readSections } from "@/actions/section";
+import { readSections } from "@/store/section/actions";
 import { RootState } from "@/store";
 import React, { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,4 +1,4 @@
-import { breakpointActionTypes, breakpointState } from "@/types/breakpoint";
+import { breakpointActionTypes, breakpointState } from "./types";
 import type { Reducer } from "redux";
 const initial: breakpointState = {
     up: {

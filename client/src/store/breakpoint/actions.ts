@@ -1,4 +1,4 @@
-import { breakpointActionTypes } from "@/types/breakpoint";
+import { breakpointActionTypes } from "./types";
 
 const { UP_UPDATE } = breakpointActionTypes;
 export const upUpdate = (payload: {[key:string]:boolean}) => ({

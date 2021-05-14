@@ -1,5 +1,5 @@
 import { RootState } from "@/store";
-import { Section } from "@/types/section";
+import { Section } from "@/store/section/types";
 import { FC } from "react";
 import { useSelector } from "react-redux";
 

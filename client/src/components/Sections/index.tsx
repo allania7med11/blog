@@ -2,16 +2,15 @@ import btn from "@/assets/css/btn.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import React, { FC } from "react";
-import { currentCreate, extendUpdate } from "@/actions/section";
+import { currentCreate, extendUpdate } from "@/store/section/actions";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
 import Form from "./Form";
 import Cards from "./Cards";
 import Sidebar from "./Sidebar";
-import { upUpdate } from "@/actions/breakpoint";
-import {  useBreakpoint } from "@/hooks/useBreakpoint";
-
+import { upUpdate } from "@/store/breakpoint/actions";
+import useBreakpoint from "@/store/breakpoint/utils"
 enum CSS {
   shadow = "z-10 w-screen h-screen fixed top-0 left-0 bg-gray-500 opacity-25",
 }

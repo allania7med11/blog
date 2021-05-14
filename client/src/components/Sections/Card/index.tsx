@@ -1,5 +1,5 @@
-import { currentUpdate } from "@/actions/section";
-import { Dispatch, Section } from "@/types/section";
+import { currentUpdate } from "@/store/section/actions";
+import { Dispatch, Section } from "@/store/section/types";
 import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FC } from "react";
