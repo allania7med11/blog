@@ -26,7 +26,6 @@ const useBreakpoint = (update:Function) => {
   useEffect(() => {
     update(getBreakpointUp(window.innerWidth))
     const calcInnerWidth = debounce(() => {
-      console.log(window.innerWidth)
       update(getBreakpointUp(window.innerWidth));
     }, 500);
     window.addEventListener("resize", calcInnerWidth);
