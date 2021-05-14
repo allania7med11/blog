@@ -2,7 +2,7 @@ import { currentUpdate } from "@/store/section/actions";
 import { Dispatch, Section } from "@/store/section/types";
 import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { useDispatch } from "react-redux";
 import Body from "./Body";
 import See from "./See";
@@ -36,4 +36,4 @@ const Card: FC<{ section: Section }> = ({ section }) => {
         </div>
     );
 };
-export default Card;
+export default memo(Card);
