@@ -7,7 +7,7 @@ export type UpdateSection = { action: CUD; section: Section };
 export type Dispatch = ThunkDispatch<{}, {}, AnyAction>;
 
 export interface Section {
-  id?: Number;
+  id?: number;
   type?: string;
   title?: string;
   description?: string;
@@ -22,7 +22,7 @@ export interface sectionState {
   show: boolean;
   current: Section;
   parent: parentSection;
-  displayId: Number;
+  displayId: number;
   extend: boolean;
 }
 

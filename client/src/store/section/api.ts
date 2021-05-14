@@ -9,10 +9,10 @@ let apiSection = {
   read(sectionId?: String) {
     return api.get(`${end_point}${sectionId ? "/" + sectionId : ""}`);
   },
-  update(id: Number | undefined, section: Section) {
+  update(id: number | undefined, section: Section) {
     return api.patch(`${end_point}/${id}`, section);
   },
-  delete(id: Number | undefined) {
+  delete(id: number | undefined) {
     return api.delete(`${end_point}/${id}`);
   },
 };

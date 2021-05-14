@@ -41,7 +41,7 @@ export const parentUpdate = (payload: parentSection) => ({
 export const close = () => ({
   type: SECTION_CLOSE,
 });
-export const displayUpdate = (payload: Number) => ({
+export const displayUpdate = (payload: number) => ({
   type: SECTION_DISPLAY,
   payload: payload,
 });
@@ -55,7 +55,7 @@ const submitChoice = {
   delete: (section: Section) => api.delete(section.id),
 };
 export const readSections =
-  (sectionId?: Number) => async (dispatch: Dispatch) => {
+  (sectionId?: number) => async (dispatch: Dispatch) => {
     let id = sectionId ? sectionId + "" : "";
     let response = await api.read(id);
     dispatch(parentUpdate(response.data));
