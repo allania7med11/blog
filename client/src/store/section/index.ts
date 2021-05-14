@@ -1,5 +1,5 @@
 import type { Reducer } from "redux";
-import { sectionActionTypes, sectionState } from "../../types/section";
+import { sectionActionTypes, sectionState } from "./types";
 const initial: sectionState = {
   action: "create",
   show: false,

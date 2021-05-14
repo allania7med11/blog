@@ -1,5 +1,5 @@
-import { Section } from "./../types/section/index";
-import api from "./index";
+import { Section } from "./types";
+import api from "../api";
 
 const end_point = "sections";
 let apiSection = {

@@ -15,7 +15,7 @@ const App: FC = () => {
         <nav className={`${navbar.nav}`}>
           <ul className="flex  text-white items-center h-full">
             <li className="opacity-75 hover:opacity-100">
-              <Link to="/">Home2</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className="opacity-75 hover:opacity-100">
               <Link to="/lectures">Lectures</Link>
