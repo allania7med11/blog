@@ -1,4 +1,4 @@
-import { Breakpoint, breakpointActionTypes, breakpointState } from "@/types/breakpoint";
+import { breakpointActionTypes, breakpointState } from "@/types/breakpoint";
 import type { Reducer } from "redux";
 const initial: breakpointState = {
     up: {
@@ -12,7 +12,7 @@ const { UP_UPDATE } = breakpointActionTypes
 
 const breakpointReducer: Reducer<
     breakpointState,
-    { type: breakpointActionTypes; payload: Breakpoint }
+    { type: breakpointActionTypes; payload: any }
 > = (state = initial, { type, payload }) => {
     switch (type) {
         case UP_UPDATE:
