@@ -36,7 +36,7 @@ const Sections: FC = () => {
           onClick={() => dispatch(extendUpdate())}
         ></div>
       )}
-      {show && <Form />}
+      {show && <Form margin={margin} />}
       <div className={margin}>
         <button
           onClick={() => dispatch(currentCreate("page", id))}

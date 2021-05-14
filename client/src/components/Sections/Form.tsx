@@ -1,4 +1,4 @@
-import React, { FormEvent, SyntheticEvent, useRef, useState } from "react";
+import React, { FC, FormEvent, SyntheticEvent, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faTimes,
@@ -63,7 +63,7 @@ const actionsInf = {
     },
 };
 
-const Form = () => {
+const Form: FC<{ margin: string }> = ({ margin }) => {
     const { action, current } = useSelector((state: RootState) => {
         let { action, current } = state.section;
         return { action, current };
@@ -78,61 +78,63 @@ const Form = () => {
     const actionInf = actionsInf[action];
     return (
         <div ref={modalRef} onClick={updateShow} className={modal.modal}>
-            <div className={`${card.card} max-w-4xl z-10`}>
-                <div onClick={() => dispatch(close())} className={card.close}>
-                    <FontAwesomeIcon className="mx-1" icon={faTimes} />
-                </div>
-                <form className={form.form} onSubmit={(evt) => submit(evt)}>
-                    {action === "delete" ? (
-                        <p className="text-center text-2xl">
-                            Are you sure you want to delete
-                            <span className="font-bold"> {section.title} </span>section?
-                        </p>
-                    ) : (
-                        <>
-                            <div className={form.title}>{title}</div>
-                            <label htmlFor="fname">Title:</label>
-                            <input
-                                value={section.title}
-                                onChange={updateSection}
-                                type="text"
-                                id="fname"
-                                name="title"
-                                required
-                            />
-                            <label htmlFor="fdescription">Description:</label>
-                            <input
-                                value={section.description}
-                                onChange={updateSection}
-                                type="text"
-                                id="fdescription"
-                                name="description"
-                                required
-                            />
-                            {
-                                section.type === 'section' && (
-                                    <>
-                                        <label htmlFor="fbody">Body:</label>
-                                        <textarea
-                                            value={section.body}
-                                            onChange={updateSection}
-                                            id="fbody"
-                                            name="body"
-                                            rows={10}
-                                            required
-                                        />
-                                    </>
-                                )
-                            }
-                        </>
-                    )}
-                    <div className="text-center">
-                        <button type="submit" className={`${btn.btn} ${actionInf.btn}`}>
-                            {actionInf.text}
-                            <FontAwesomeIcon className="mx-1" icon={actionInf.icon} />
-                        </button>
+            <div className={margin}>
+                <div className={`${card.card} max-w-4xl z-30`}>
+                    <div onClick={() => dispatch(close())} className={card.close}>
+                        <FontAwesomeIcon className="mx-1" icon={faTimes} />
                     </div>
-                </form>
+                    <form className={form.form} onSubmit={(evt) => submit(evt)}>
+                        {action === "delete" ? (
+                            <p className="text-center text-2xl">
+                                Are you sure you want to delete
+                                <span className="font-bold"> {section.title} </span>section?
+                            </p>
+                        ) : (
+                            <>
+                                <div className={form.title}>{title}</div>
+                                <label htmlFor="fname">Title:</label>
+                                <input
+                                    value={section.title}
+                                    onChange={updateSection}
+                                    type="text"
+                                    id="fname"
+                                    name="title"
+                                    required
+                                />
+                                <label htmlFor="fdescription">Description:</label>
+                                <input
+                                    value={section.description}
+                                    onChange={updateSection}
+                                    type="text"
+                                    id="fdescription"
+                                    name="description"
+                                    required
+                                />
+                                {
+                                    section.type === 'section' && (
+                                        <>
+                                            <label htmlFor="fbody">Body:</label>
+                                            <textarea
+                                                value={section.body}
+                                                onChange={updateSection}
+                                                id="fbody"
+                                                name="body"
+                                                rows={10}
+                                                required
+                                            />
+                                        </>
+                                    )
+                                }
+                            </>
+                        )}
+                        <div className="text-center">
+                            <button type="submit" className={`${btn.btn} ${actionInf.btn}`}>
+                                {actionInf.text}
+                                <FontAwesomeIcon className="mx-1" icon={actionInf.icon} />
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );
