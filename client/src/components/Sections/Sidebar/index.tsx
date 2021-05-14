@@ -8,7 +8,7 @@ import Parent from "./Parent";
 import Child from "./Child";
 import { extendUpdate } from "@/store/section/actions";
 enum CSS {
-    navbar = "z-20 text-left h-screen text-lg font-medium truncate bg-gray-800 whitespace-nowrap fixed top-12 left-0 flex flex-col pl-4 pb-4 pt-2   text-gray-400"
+    navbar = "z-20 text-left h-screen text-lg font-medium truncate bg-gray-800 whitespace-nowrap fixed top-14 left-0 flex flex-col pl-4 pb-4 pt-2   text-gray-400"
 }
 const useExtend = (extend: boolean) => {
     const dispatch = useDispatch();
