@@ -1,0 +1,16 @@
+.wrapper {
+  padding: 2px;
+  border: 1px solid #ccc;
+}
+.wrapper:focus-within {
+  border: 1px solid blue;
+}
+.editor {
+  padding: 8px;
+  border: 1px solid #ccc;
+  min-height: 200px;
+}
+
+.toolbar {
+  border: 1px solid #ccc;
+}

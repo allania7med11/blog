@@ -12,6 +12,8 @@ const Body: FC<{ section: Section }> = ({ section }) => {
                 : section.description;
         return <p className="text-sm px-2 text-gray-800">{text}</p>;
     }
-    return <div>{section.body}</div>
+    const html = { __html: section.body + "" }
+    return <div dangerouslySetInnerHTML={html} />
+
 };
 export default Body
