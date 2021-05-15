@@ -1,14 +1,17 @@
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import React, { FC, useState } from 'react';
-import { ContentState, convertFromHTML, convertToRaw, EditorState } from 'draft-js';
+import { ContentState, convertToRaw, EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
 import CSS from "@/assets/css/editor.module.scss"
-
+import htmlToDraft from 'html-to-draftjs';
 type props = { html: string, onChange: (html: string) => void }
 const EditorInput: FC<props> = ({ html, onChange }) => {
-    let content = convertFromHTML(html)
-    const initial = EditorState.createWithContent(ContentState.createFromBlockArray(content.contentBlocks))
+    const contentBlock = htmlToDraft(html);
+    const contentState = ContentState.createFromBlockArray(
+        contentBlock.contentBlocks
+    );
+    const initial = EditorState.createWithContent(contentState);
     const [editor, setEditor] = useState(initial);
     const onEditorStateChange = (editorState: EditorState) => {
         setEditor(editorState);
@@ -16,7 +19,6 @@ const EditorInput: FC<props> = ({ html, onChange }) => {
     };
     return (<div>
         <Editor
-            defaultEditorState={initial}
             editorState={editor}
             wrapperClassName={CSS.wrapper}
             editorClassName={CSS.editor}
