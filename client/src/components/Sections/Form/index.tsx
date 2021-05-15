@@ -46,7 +46,6 @@ function useModal(dispatch: Dispatch) {
   const modalRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const updateShow: any = (event: SyntheticEvent) => {
-    console.log(event.target, modalRef.current);
     if (
       (modalRef.current && modalRef.current === event.target) ||
       (containerRef.current && containerRef.current === event.target)

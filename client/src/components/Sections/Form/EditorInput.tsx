@@ -3,7 +3,7 @@ import React, { FC, useState } from 'react';
 import { ContentState, convertFromHTML, convertToRaw, EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
-import CSS from  "@/assets/css/editor.module.scss"
+import CSS from "@/assets/css/editor.module.scss"
 
 type props = { html: string, onChange: (html: string) => void }
 const EditorInput: FC<props> = ({ html, onChange }) => {
@@ -16,6 +16,7 @@ const EditorInput: FC<props> = ({ html, onChange }) => {
     };
     return (<div>
         <Editor
+            defaultEditorState={initial}
             editorState={editor}
             wrapperClassName={CSS.wrapper}
             editorClassName={CSS.editor}
