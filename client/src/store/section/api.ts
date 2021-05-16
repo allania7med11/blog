@@ -15,5 +15,8 @@ let apiSection = {
   delete(id: number | undefined) {
     return api.delete(`${end_point}/${id}`);
   },
+  upload(fb: FormData) {
+    return api.post(`uploads`,fb);
+  },
 };
 export default apiSection;

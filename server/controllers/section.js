@@ -1,5 +1,6 @@
 const { models } = require("../sequelize");
 
+
 module.exports = {
   create: async (req, res) => {
     let obj = req.body;
