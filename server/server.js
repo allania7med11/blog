@@ -9,6 +9,7 @@ if (process.env.NODE_ENV === "production") {
 } else {
   dotenv.config({ path: ".env.dev" });
 }
+
 require("dotenv").config();
 const app = require("./app");
 // create a write stream (in append mode)
