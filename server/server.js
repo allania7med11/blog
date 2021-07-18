@@ -4,11 +4,7 @@ const path = require("path")
 var morgan = require('morgan')
 morgan('tiny')
 var logger = morgan('combined')
-if (process.env.NODE_ENV === "production") {
-  dotenv.config();
-} else {
-  dotenv.config({ path: ".env.dev" });
-}
+dotenv.config();
 
 require("dotenv").config();
 const app = require("./app");
