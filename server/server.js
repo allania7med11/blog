@@ -14,7 +14,7 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {
 // setup the logger
 app.use(morgan('combined', { stream: accessLogStream }))
 const sequelize = require("./sequelize");
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 async function assertDatabaseConnectionOk() {
   console.log(`Checking database connection...`);
