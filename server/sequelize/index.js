@@ -2,6 +2,7 @@ const sequelize = require("./db");
 const { applyExtraSetup } = require("./extra-setup");
 const modelDefiners = [
   require("./models/section"),
+  require("./models/user"),
   // Add more models here...
   // require('./models/item'),
 ];
