@@ -8,6 +8,7 @@ import {
 import Home from './views/Home';
 import Lectures from './views/Lectures';
 import navbar from "@/assets/css/navbar.module.scss"
+import { SignUp } from './views/SignUp';
 const App: FC = () => {
   return (
     <Router>
@@ -18,6 +19,9 @@ const App: FC = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="opacity-75 hover:opacity-100">
+              <Link to="/signup">Sign Up</Link>
+            </li>
+            <li className="opacity-75 hover:opacity-100">
               <Link to="/lectures">Lectures</Link>
             </li>
           </ul>
@@ -26,6 +30,9 @@ const App: FC = () => {
           <Switch>
             <Route path="/" exact>
               <Home />
+            </Route>
+            <Route path="/signup" exact>
+              <SignUp/>
             </Route>
             <Route path="/lectures/:id?">
               <Lectures />
