@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
+import { createBrowserHistory } from "history";
+import { Router } from 'react-router'
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Link
@@ -9,9 +10,10 @@ import Home from './views/Home';
 import Lectures from './views/Lectures';
 import navbar from "@/assets/css/navbar.module.scss"
 import { SignUp } from './views/SignUp';
+export const updateUrl = createBrowserHistory()
 const App: FC = () => {
   return (
-    <Router>
+    <Router history={updateUrl}>
       <div className="app">
         <nav className={`${navbar.nav}`}>
           <ul className="flex  text-white items-center h-full">

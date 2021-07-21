@@ -1,4 +1,4 @@
-import { CreateUser } from "@/components/USERS/Create"
+import { CreateUser } from "@/components/Users/Create"
 
 export const SignUp = () => {
     return <CreateUser />

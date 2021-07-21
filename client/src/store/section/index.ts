@@ -17,6 +17,7 @@ const initial: sectionState = {
 };
 const { SECTION_CURRENT, SECTION_PARENT, SECTION_CLOSE, SECTION_DISPLAY,SECTION_EXTEND } =
   sectionActionTypes;
+  
 const sectionReducer: Reducer<
   sectionState,
   { type: sectionActionTypes; payload?: any }
