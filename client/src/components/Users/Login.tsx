@@ -21,7 +21,7 @@ export const Login = () => {
     return (
         <div className={`${cardCss.card} mt-16 max-w-xl z-10 font-serif`}>
             <form className={formCss.form} onSubmit={(evt) => submit(evt)}>
-                <div className={formCss.title}>Sign Up</div>
+                <div className={formCss.title}>Login</div>
                 <label htmlFor="fusername">Username:</label>
                 <input
                     value={username}
