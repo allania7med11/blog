@@ -30,6 +30,6 @@ const useBreakpoint = (update:Function) => {
     }, 500);
     window.addEventListener("resize", calcInnerWidth);
     return () => window.removeEventListener("resize", calcInnerWidth);
-  },[update]);
+  },[]);
 };
 export default useBreakpoint
