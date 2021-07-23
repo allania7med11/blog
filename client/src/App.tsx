@@ -10,6 +10,7 @@ import Home from './views/Home';
 import Lectures from './views/Lectures';
 import navbar from "@/assets/css/navbar.module.scss"
 import { SignUp } from './views/SignUp';
+import { Login } from './components/Users/Login';
 export const updateUrl = createBrowserHistory()
 const App: FC = () => {
   return (
@@ -24,6 +25,9 @@ const App: FC = () => {
               <Link to="/signup">Sign Up</Link>
             </li>
             <li className="opacity-75 hover:opacity-100">
+              <Link to="/login">Login</Link>
+            </li>
+            <li className="opacity-75 hover:opacity-100">
               <Link to="/lectures">Lectures</Link>
             </li>
           </ul>
@@ -35,6 +39,9 @@ const App: FC = () => {
             </Route>
             <Route path="/signup" exact>
               <SignUp/>
+            </Route>
+            <Route path="/login" exact>
+              <Login/>
             </Route>
             <Route path="/lectures/:id?">
               <Lectures />
