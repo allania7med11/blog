@@ -1,7 +1,7 @@
 import { updateUrl } from "@/App";
 import { Dispatch } from "../section/types";
 import { apiUser } from "./api";
-import { User, UserActionTypes, UserCreate } from "./types";
+import { User, UserActionTypes, UserCreate, UserLogin } from "./types";
 
 const { USER_UPDATE } = UserActionTypes
 
@@ -17,3 +17,12 @@ export const signUp =
             dispatch(userUpdate(response.data))
             updateUrl.push('/lectures');
         };
+export const login =
+        (user: UserLogin) =>
+            async (dispatch: Dispatch) => {
+                let response = await apiUser.login(user);
+                console.log(response.data);
+                dispatch(userUpdate(response.data))
+                updateUrl.push('/lectures');
+            };
+    
