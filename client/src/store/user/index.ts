@@ -1,13 +1,18 @@
-import { Reducer } from "react-router/node_modules/@types/react";
+import type { Reducer } from "redux";
 import { UserActionTypes, UserState } from "./types";
 
 const { USER_UPDATE } = UserActionTypes
 
-const initial = {
-    user: null
+let initial:UserState = {
+    current: null
 }
-
-export const userReducer: Reducer<
+initial = {
+    current: {
+        username: "allaniTest",
+        email: "allani@test.tn"
+    }
+}
+const userReducer: Reducer<
     UserState,
     { type: UserActionTypes; payload?: any }
 > = (state = initial, { type, payload }) => {
@@ -15,9 +20,11 @@ export const userReducer: Reducer<
         case USER_UPDATE:
             return {
                 ...state,
-                user: payload.user
+                current: payload
             };
         default:
             return state;
     }
+    
 }
+export default userReducer
