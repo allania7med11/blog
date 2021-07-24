@@ -10,8 +10,12 @@ import Lectures from './views/Lectures';
 import { SignUp } from './views/SignUp';
 import { Login } from './components/Users/Login';
 import { Navbar } from './layouts/Navbar';
+import { getCurrent } from './store/user/actions';
+import { useDispatch } from 'react-redux';
 export const updateUrl = createBrowserHistory()
 const App: FC = () => {
+  const dispatch = useDispatch();
+  dispatch(getCurrent())
   return (
     <Router history={updateUrl}>
       <div className="app">

@@ -6,12 +6,6 @@ const { USER_UPDATE } = UserActionTypes
 let initial:UserState = {
     current: null
 }
-initial = {
-    current: {
-        username: "allaniTest",
-        email: "allani@test.tn"
-    }
-}
 const userReducer: Reducer<
     UserState,
     { type: UserActionTypes; payload?: any }

@@ -8,6 +8,9 @@ export let apiUser = {
   },
   login(user: UserLogin) {
     return api.post(`${end_point}/login`, user);
+  },
+  current() {
+    return api.get(`${end_point}/current`);
   }
 };
 
