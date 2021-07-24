@@ -18,19 +18,26 @@ export const signUp = (user: UserCreate) => async (dispatch: Dispatch) => {
 export const login = (user: UserLogin) => async (dispatch: Dispatch) => {
   let response = await apiUser.login(user);
   console.log(response.data);
-  if(response.status === 200){
+  if (response.status === 200) {
     dispatch(userUpdate(response.data));
-  }else{
+  } else {
     dispatch(userUpdate(null));
   }
   updateUrl.push("/lectures");
 };
 export const getCurrent = () => async (dispatch: Dispatch) => {
   let response = await apiUser.current();
-  if(response.status === 200){
+  if (response.status === 200) {
     dispatch(userUpdate(response.data));
-  }else{
+  } else {
     dispatch(userUpdate(null));
   }
   updateUrl.push("/lectures");
+};
+export const logout = () => async (dispatch: Dispatch) => {
+  let response = await apiUser.logout();
+  if (response.status === 200) {
+    dispatch(userUpdate(null));
+  }
+  updateUrl.push("/login");
 };

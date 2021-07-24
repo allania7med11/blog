@@ -11,6 +11,9 @@ export let apiUser = {
   },
   current() {
     return api.get(`${end_point}/current`);
+  },
+  logout() {
+      return api.delete(`${end_point}/logout`);
   }
 };
 
