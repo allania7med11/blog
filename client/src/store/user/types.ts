@@ -10,9 +10,9 @@ export interface UserLogin {
 export interface User {
   username: string;
   email: string;
-}
+} 
 export interface UserState {
-  user: User | null
+  current: User | null
 }
 export enum UserActionTypes {
   USER_UPDATE = "USER_UPDATE",

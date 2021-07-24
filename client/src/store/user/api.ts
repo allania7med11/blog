@@ -8,6 +8,12 @@ export let apiUser = {
   },
   login(user: UserLogin) {
     return api.post(`${end_point}/login`, user);
+  },
+  current() {
+    return api.get(`${end_point}/current`);
+  },
+  logout() {
+      return api.delete(`${end_point}/logout`);
   }
 };
 

@@ -42,7 +42,7 @@ export const Login = () => {
                 />
                 <div className="text-center">
                     <button type="submit" className={`${btnCss.btn} bg-primary w-full mt-6`}>
-                        Create an account
+                        Log in
                     </button>
                 </div>
             </form>
